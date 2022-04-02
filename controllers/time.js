@@ -40,7 +40,7 @@ const  postTime = async (req, res) => {
       times: times[0]
     })
 
-    const newTimes = await time.save()
+    await time.save()
 
     
   } catch (error) {

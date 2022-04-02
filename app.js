@@ -1,4 +1,4 @@
-require('./environments/environemnt')
+//require('./environments/environemnt')
 
 const express = require('express')
 const bodyParser = require('body-parser');
