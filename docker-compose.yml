@@ -1,8 +1,8 @@
 version: '3'
 services: 
   app:
-    image: geovanedasilva/node-deploy
-    container_name: 'node-deploy'
+    image: geovanedasilva/efficientorg
+    container_name: 'efficientorg'
     restart: always
     ports:
       - "3000:3000"

@@ -51,7 +51,7 @@ const  postTime = async (req, res) => {
 }
 
 cron.schedule('*/5 * * * *', async () => {
-  console.log('running a task every minute');
+  console.log('running a task every 5 minute */5 * * * *');
   postTime()
 });
 
