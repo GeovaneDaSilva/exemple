@@ -16,7 +16,7 @@ const getTime = async(req, res) => {
     
     res.json({
       ok: true,
-      msg: 'Response is ready!',
+      msg: 'Response is ready2!',
       times: times[0].times
     })
   } catch (error) {
