@@ -5,7 +5,7 @@ var Schema = mongoose.Schema;
 
 
 var timeSchema = new Schema({
-    time: Array,
+    times: Array,
 
 
     created_date: {  type: Date, required: [false, ' no required']},
