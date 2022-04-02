@@ -1,4 +1,4 @@
-//require('../environments/environment')
+require('../environments/environment')
    
 const express = require("express")
 
