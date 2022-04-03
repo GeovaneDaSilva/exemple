@@ -42,7 +42,6 @@ const  postTime = async (req, res) => {
 
     await time.save()
 
-    
   } catch (error) {
     console.log(error);
     return error
@@ -50,7 +49,7 @@ const  postTime = async (req, res) => {
 
 }
 
-cron.schedule('*/5 * * * *', async () => {
+cron.schedule('0 */2 * * *', async () => {
   console.log('running a task every 5 minute */5 * * * *');
   postTime()
 });
