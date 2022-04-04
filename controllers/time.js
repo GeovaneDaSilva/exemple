@@ -1,7 +1,6 @@
 
 "use strict";
 const axios = require('axios');
-const cron = require('node-cron');
 const Time = require('../database/model/time')
 
 const urlEndpoint = 'https://services.swpc.noaa.gov/json/rtsw/rtsw_mag_1m.json'
@@ -13,10 +12,9 @@ const getTime = async(req, res) => {
   try {
     const times = await Time.find()
 
-    
     res.json({
       ok: true,
-      msg: 'Response is ready!',
+      msg: 'Efficient challenge!',
       times: times[0].times
     })
   } catch (error) {
@@ -42,7 +40,12 @@ const  postTime = async (req, res) => {
 
     await time.save()
 
-    
+    return res.send({
+      ok: true,
+      msg: 'data is ready updated',
+      data: response.data
+    })
+
   } catch (error) {
     console.log(error);
     return error
@@ -50,16 +53,39 @@ const  postTime = async (req, res) => {
 
 }
 
-cron.schedule('*/5 * * * *', async () => {
-  console.log('running a task every minute');
-  postTime()
-});
 
+const  deleteTime = async (req, res) => {
+
+  try {
+
+    await Time.deleteMany()
+
+    let times = []
+    times.push([])
+    const time = new Time({
+      times: 'Database is empty.'
+    })
+
+    await time.save()
+
+    return res.send({
+      ok: true,
+      msg: 'Database is empty.'
+    })
+
+  } catch (error) {
+    console.log(error);
+    return error
+  }
+
+}
 
 
 
 module.exports = {
   getTime,
-  postTime
+  postTime,
+  deleteTime
 };
 
+/////////////////// OK ////////////////////
