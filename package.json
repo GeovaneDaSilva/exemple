@@ -6,7 +6,10 @@
   "scripts": {
     "start": "node app.js",
     "dev": "nodemon app.js",
-    "test": "jest"
+    "test": "jest --colors --noStackTrace --passWithNoTests --runInBand",
+    "test:unit": "npm test -- --watch -c jest-unit-config.js",
+    "test:integration": "npm test -- --watch -c jest-integration-config.js",
+    "test:staged": "npm test -- --findRelatedTests --silent"
   },
   "author": "",
   "license": "ISC",
@@ -36,6 +39,8 @@
   "devDependencies": {
     "@types/mysql": "^2.15.9",
     "eslint-config-node": "^4.0.0",
-    "jest": "^26.2.2"
+    "husky": "^7.0.4",
+    "jest": "^26.2.2",
+    "supertest": "^6.2.2"
   }
 }

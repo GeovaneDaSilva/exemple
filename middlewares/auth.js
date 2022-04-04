@@ -1,7 +1,7 @@
 const jwt = require('jsonwebtoken') // https://www.npmjs.com/package/jsonwebtoken
 
 //=====================================
-// CONFIGURANDO tokem                            
+// CONFIGURANDO tokem k                           
 //=====================================
 
 let verificaToken =  function (req, res, next){
