@@ -1,5 +1,5 @@
 buildjob:
-  stage:build
+  stage: build
   tags:
     - dockerefficientorgaws
   script:
