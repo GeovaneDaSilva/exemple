@@ -28,7 +28,7 @@ const getTime = async(req, res) => {
 
 
 
-const  putTime = async (req, res) => {
+const  postTime = async (req, res) => {
 
   try {
     const response = await axios.get(urlEndpoint);
@@ -42,7 +42,7 @@ const  putTime = async (req, res) => {
 
     await time.save()
 
-    return await res.send({
+    return res.send({
       ok: true,
       msg: 'data is ready updated',
       data: response.data
@@ -70,7 +70,7 @@ const  deleteTime = async (req, res) => {
 
     await time.save()
 
-    return await res.send({
+    return res.send({
       ok: true,
       msg: 'Database is empty.'
     })
@@ -86,7 +86,7 @@ const  deleteTime = async (req, res) => {
 
 module.exports = {
   getTime,
-  putTime,
+  postTime,
   deleteTime
 };
 
