@@ -42,17 +42,17 @@ const  postTime = async (req, res) => {
 
     await time.save()
 
+    return res.send({
+      ok: true,
+      msg: 'data is ready updated'
+    })
+
   } catch (error) {
     console.log(error);
     return error
   }
 
 }
-
-cron.schedule('0 */2 * * *', async () => {
-  console.log('running a task every 5 minute */5 * * * *');
-  postTime()
-});
 
 
 
