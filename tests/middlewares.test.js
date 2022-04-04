@@ -1,6 +1,5 @@
 const request = require("supertest");
 const express = require('express');
-const axios = require('axios');
 
 const app = express();
 
@@ -26,5 +25,6 @@ describe('CI test', () => {
       .put('/api/time')
       .expect('content-type', /json/)
   })
+
 
 })
