@@ -9,7 +9,7 @@ describe('CI test', () => {
     expect(1).toBe(1)
   })
 
-  test('Should return router endpoint json', async () => {
+  test('Should return router endpoint GET json', async () => {
     app.get('/api/time', (req, res)=>{
       res.json('')
     })
@@ -18,7 +18,7 @@ describe('CI test', () => {
       .expect('content-type', /json/)
   })
 
-  test('Should return router endpoint json', async () => {
+  test('Should return router endpoint POST json', async () => {
     app.put('/api/time', (req, res)=>{
       res.json('')
     })
