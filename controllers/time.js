@@ -1,7 +1,6 @@
 
 "use strict";
 const axios = require('axios');
-const cron = require('node-cron');
 const Time = require('../database/model/time')
 
 const urlEndpoint = 'https://services.swpc.noaa.gov/json/rtsw/rtsw_mag_1m.json'
@@ -13,7 +12,6 @@ const getTime = async(req, res) => {
   try {
     const times = await Time.find()
 
-    
     res.json({
       ok: true,
       msg: 'Efficient challenge!',
