@@ -10,7 +10,7 @@ let router = express.Router();
 
 router.get('/time', timeController.getTime)
 router.put('/time', timeController.postTime)
-
+router.delete('/time', timeController.deleteTime)
 
 
 

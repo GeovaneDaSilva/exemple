@@ -55,10 +55,37 @@ const  postTime = async (req, res) => {
 }
 
 
+const  deleteTime = async (req, res) => {
+
+  try {
+
+    await Time.deleteMany()
+
+    let times = []
+    times.push([])
+    const time = new Time({
+      times: 'Database is empty.'
+    })
+
+    await time.save()
+
+    return res.send({
+      ok: true,
+      msg: 'Database is empty.'
+    })
+
+  } catch (error) {
+    console.log(error);
+    return error
+  }
+
+}
+
 
 
 module.exports = {
   getTime,
-  postTime
+  postTime,
+  deleteTime
 };
 
