@@ -1,0 +1,9 @@
+buildjob:
+  stage:build
+  tags:
+    - dockerefficientorgaws
+  script:
+    - docker build -t geovanedasilva/efficientorg:latest .
+    - docker image push geovanedasilva/efficientorg:latest
+    - aws ecs update-service --custler efficientorgclueter --service efficientorg-service --force-new-deployment
+
